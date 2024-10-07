@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'nav.html' %}
+<video autoplay muted loop id="background">
+    <source src="{{ url_for('static', filename='img/background.mp4') }}", type="video/mp4">
+</video>
+<div class="modal">
+    <form action="{{ url_for('edit', id=record.id) }}" method="POST">
+        <a href="{{ url_for('view') }}"><div>< Back</div></a>
+        <h3>Edit Record</h2>
+        <label for="player_name">Player Name</label>
+        <input type="text" name="player_name" value="{{ record.player_name}}" required>
+
+        <label for="time_taken">Time Taken</label>
+        <div class="time-taken">
+            <input class="time-taken-child" type="number" name="time_taken_min" min=0 value="{{ converted_min }}" required>
+            <label for="time_taken_min">m</label>
+
+            <input class="time-taken-child" type="number" name="time_taken_sec" min=0 max=59 value="{{ converted_sec }}" required>
+            <label for="time_taken_sec">s</label>
+
+            <input class="time-taken-child" type="number" name="time_taken_ms" min=0 max=999 value="{{ converted_ms }}" required>
+            <label for="time_taken_ms">ms</label>
+        </div>
+
+        <label for="date">Date</label>
+        <input type="date" name="date" value="{{ record.date}}" required>
+
+        <label for="difficulty">Difficulty</label>
+        <select name="difficulty" required>
+            <option value="" disabled>Select a difficulty</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+
+        <div class="form-button">
+            <button class="green-button button" type="submit" name="action" value="save">Save</button>
+            <button class="brown-button button" type="submit" name="action" value="delete">Delete</button>
+        </div>
+
+
+    </form>
+
+</div>
+
+{% endblock %}
