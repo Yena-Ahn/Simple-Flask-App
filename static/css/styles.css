@@ -1,0 +1,327 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../fonts/MinecraftRegular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    font-weight: bold;
+    src: url('../fonts/MinecraftBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/MinecraftBoldItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    font-style: italic;
+    src: url('../fonts/MinecraftItalic.otf') format('opentype');
+}
+
+* {
+    font-family: 'Minecraft';
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; /* Use box-sizing set in html */
+}
+
+body {
+    background-color: #203B25;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: pre-line;
+    text-shadow: 10px 10px black;
+    color: #D0C5C0;
+    font-size: 5em;
+    -webkit-text-stroke: 1px black;
+
+}
+
+header {
+    background-color: #808080;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    height: 73px;
+}
+
+header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header ul li :hover {
+    color: #203B25;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    color: lightgreen;
+    font-size: 2em;
+}
+
+.wallpaper {
+    height: 100%;
+    background-image: url('../img/wallpaper.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.heading {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading div {
+    display: grid;
+    grid-template-areas: "1 2";
+}
+
+.heading-logo {
+    height: 10rem;
+    width: 10rem;
+    grid-area: 1;
+    margin-right: 2em;
+    align-self: center;
+    box-shadow: 3px 3px 10px black;
+}
+
+.grey-button {
+    background-color: #808080;
+    color: white;
+    border: 1px black solid;
+    width: 15rem;
+    height: 3rem;
+    font-size: 1em;
+    text-shadow: 1px 1px black;
+    box-shadow: 3px 3px black;
+    cursor: pointer;
+
+}
+
+.green-button {
+    background-color: #70B237;
+    color: #203B25;
+    padding: 3px 13px;
+    border: none;
+
+
+}
+
+.brown-button {
+    background-color: #854F2B;
+    color: white;
+    border: none;
+
+}
+
+.grey-button:hover {
+    background-color: #525252;
+}
+
+.green-button:hover {
+    background-color: limegreen;
+}
+
+.brown-button:hover {
+    background-color: darkred;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+
+}
+
+table, th, td {
+    color: white;
+
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th:first-child, td:first-child {
+    padding-left: 20px;
+}
+
+th:nth-child(1), th:nth-child(2), td:nth-child(1), td:nth-child(2) {
+    text-align: left;
+}
+
+tr:nth-child(1):hover {
+    cursor: default;
+}
+
+tr:nth-child(odd), tr:nth-child(1):hover {
+    background-color: rgba(0, 0, 0, .09);
+}
+
+tr:hover {
+    background-color: hsla(0, 0%, 100%, .075);
+    cursor: pointer;
+}
+table {
+    counter-reset: tableCount;
+}
+
+td:nth-child(1)::before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}
+
+caption {
+    text-align: left;
+}
+
+.nav-logo {
+    width: 50px;
+}
+
+.view-heading {
+    text-align: right;
+    padding: 10px;
+    background-color: #386641;
+    text-shadow: 2px 2px #203B25;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: calc(100vh - 73px);
+}
+
+
+
+.modal form {
+
+    background-color: transparent; 
+    width: 400px; 
+    padding: 20px; 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add shadow */
+    display: flex; 
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Form Styles */
+label {
+    margin-top: 10px; /* Space between label and input */
+    font-weight: bold; /* Make labels bold */
+    color: white; /* White text for labels */
+    text-shadow: 1px 1px black;
+    
+}
+
+
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    padding: 10px; /* Add padding */
+    margin-top: 5px; /* Space between label and input */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+h3 {
+    color:white;
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 3px 3px black;
+}
+
+.form-button {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.button {
+    width: 40%;
+    height: 30px;
+    color: white !important;
+    text-shadow: 1px 1px black;
+    border: 1px solid black;
+    box-shadow: 1px 1px black;
+    margin-bottom: 1em;
+}
+
+
+.time-taken {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.time-taken-child {
+    width: 25%;
+}
+
+video {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    min-width: 100%;
+}
+
+#background {
+    top: 73px;
+}
+
+.end {
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.view-page {
+    padding: 50px 100px;
+    text-align: right;
+}
