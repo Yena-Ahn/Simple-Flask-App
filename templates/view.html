@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% include 'nav.html' %}
+
+
+<div class="view-heading">
+    <h2>Minecraft Any% Speed Run</h2>
+</div>
+
+<div class="view-page">
+    <button class="green-button">Rules</button>
+    <table>
+        <caption>Click a row to edit or delete the data!</caption>
+        <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>Time Taken</th>
+            <th>Date</th>
+            <th>Difficulty</th>
+        </tr>
+        {% for id, player_name, time_taken, date, difficulty in records %}
+        <tr >
+                <td><a href="{{ url_for('edit', id=id) }}"></a></td>
+                <td><a href="{{ url_for('edit', id=id) }}">{{ player_name }}</a></td>
+                <td><a href="{{ url_for('edit', id=id) }}">{{ time_taken }}</a></td>
+                <td><a href="{{ url_for('edit', id=id) }}">{{ date }}</a></td>
+                <td><a href="{{ url_for('edit', id=id) }}">{{ difficulty }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p class="end">End of the result.</p>
+</div>
+
+{% endblock %}
