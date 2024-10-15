@@ -44,8 +44,23 @@ def view():
     conn.close()
     return render_template('view.html', records=records)
 
-@app.route("/add")
+@app.route("/add", methods=['GET', 'POST'])
 def add():
+    conn = get_db_connection()
+    if request.method == "POST":
+        player_name = request.form['player_name']
+        time_taken_min = request.form['time_taken_min']
+        time_taken_sec = request.form['time_taken_sec']
+        time_taken_ms = request.form['time_taken_ms']
+        date = request.form['date']
+        difficulty = request.form['difficulty']
+        converted_ms = convert_to_ms(time_taken_min, time_taken_sec, time_taken_ms)
+        print(converted_ms)
+        conn.execute('INSERT INTO leaderboard (player_name,time_taken,date,difficulty) VALUES (?,?,?,?)', 
+                (player_name, converted_ms, date, difficulty))
+        conn.commit()
+        conn.close()
+        return redirect(url_for('view'))
     return render_template('add.html')
 
 @app.route("/edit/<int:id>", methods=['GET', 'POST'])

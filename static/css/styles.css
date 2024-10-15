@@ -325,3 +325,39 @@ video {
     padding: 50px 100px;
     text-align: right;
 }
+
+.add-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 73px);
+    padding: 50px 100px;
+}
+
+
+
+.add-page form {
+    background-color: grey; 
+    width: 400px; 
+    height: 600px;
+    padding: 20px; 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add shadow */
+    display: flex; 
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.rules {
+    height: 600px;
+    margin-left: 50px;
+}
+
+
+
+ol li {
+    color: white;
+    padding-bottom: 30px;
+}
+
+

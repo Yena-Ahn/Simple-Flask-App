@@ -11,7 +11,7 @@
 </div>
 
 <div class="view-page">
-    <button class="green-button">Rules</button>
+    <a href="{{ url_for('add') }}"><button class="green-button">Submit Record</button></a>
     <table>
         <caption>Click a row to edit or delete the data!</caption>
         <tr>
@@ -20,6 +20,7 @@
             <th>Time Taken</th>
             <th>Date</th>
             <th>Difficulty</th>
+            <th>Edit</th>
         </tr>
         {% for id, player_name, time_taken, date, difficulty in records %}
         <tr >
@@ -28,6 +29,7 @@
                 <td><a href="{{ url_for('edit', id=id) }}">{{ time_taken }}</a></td>
                 <td><a href="{{ url_for('edit', id=id) }}">{{ date }}</a></td>
                 <td><a href="{{ url_for('edit', id=id) }}">{{ difficulty }}</a></td>
+                <td><a href="{{ url_for('edit', id=id) }}"><button class="green-button edit-button">Edit</button></a></td>
         </tr>
         {% endfor %}
     </table>
